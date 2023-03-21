@@ -46,6 +46,7 @@ namespace test {
     void CubeTest::OnRender()
     {
         m_Renderer->Clear();
+        glClear(GL_DEPTH_BUFFER_BIT);
         //glDisable(GL_CULL_FACE);
         
         glm::mat4 model = glm::rotate(m_Model, x_Rotate, glm::vec3(1.0f, 0.0f, 0.0f));
@@ -54,6 +55,7 @@ namespace test {
         glm::mat4 mvp = m_Proj * m_View * model;
 
         {
+            GLCall(glEnable(GL_DEPTH_TEST));
             m_Shader->Bind();
             m_Shader->setUniform4f("u_Color", 0.0f, 0.0f, 1.0f, 1.0f);
             m_Shader->setUniformMat4f("u_MVP", mvp);
