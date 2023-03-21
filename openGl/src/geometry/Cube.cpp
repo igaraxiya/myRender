@@ -41,23 +41,23 @@ namespace geometry {
 		* 三角形先左后右
 		*/
 		m_IndexBuffer = {
-			1, 2, 4,
-			2, 3, 4,
+			0, 1, 3,
+			1, 2, 3,
 
-			2, 6, 3,
-			6, 7, 3,
+			1, 5, 2,
+			5, 6, 2,
 
-			6, 5, 7,
-			5, 8, 7,
+			5, 4, 6,
+			4, 7, 6,
 
-			5, 1, 8,
-			1, 4, 8,
+			4, 0, 7,
+			0, 3, 7,
 
-			4, 3, 8,
-			3, 7, 8,
+			3, 2, 7,
+			2, 6, 7,
 
-			5, 6, 1,
-			6, 3, 1
+			4, 5, 0,
+			5, 2, 0
 		};
 	}
 
@@ -97,9 +97,6 @@ namespace geometry {
 	void Cube::init_Texture(float x_length, float y_length, float z_length)
 	{
 		m_VertexBuffer = {
-
-		};
-		m_IndexBuffer = {
 
 		};
 		setIndexBuffer();
