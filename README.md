@@ -2,4 +2,4 @@
 
 Vendor:
 * stb https://github.com/nothings/stb
-* imgui https://github.com/ocornut/imgui)[https://github.com/ocornut/imgui
+* imgui https://github.com/ocornut/imgui
