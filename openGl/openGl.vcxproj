@@ -139,6 +139,7 @@
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\test\CubeTest.cpp" />
     <ClCompile Include="src\test\demo.cpp" />
     <ClCompile Include="src\test\Test.cpp" />
     <ClCompile Include="src\test\TestTexture2D.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\test\CubeTest.h" />
     <ClInclude Include="src\test\demo.h" />
     <ClInclude Include="src\test\Test.h" />
     <ClInclude Include="src\test\TestTexture2D.h" />

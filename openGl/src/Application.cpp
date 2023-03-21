@@ -9,6 +9,7 @@
 
 #include "test/demo.h"
 #include "test/TestTexture2D.h"
+#include "test/CubeTest.h"
 
 int main(void)
 {
@@ -48,6 +49,7 @@ int main(void)
 
     testMenu->RegisterTest<test::demo>("demo");
     testMenu->RegisterTest<test::TestTexture2D>("TestTexture2D");
+    testMenu->RegisterTest<test::CubeTest>("CubeTest");
 
     while (!glfwWindowShouldClose(window))
     {

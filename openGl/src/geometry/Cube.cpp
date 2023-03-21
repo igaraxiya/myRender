@@ -5,9 +5,17 @@ namespace geometry {
 	{
 		return m_VertexBuffer;
 	}
+	unsigned int Cube::GetVertexBufferSize()
+	{
+		return m_VertexBufferSize;
+	}
 	std::vector<unsigned int>& Cube::GetIndexBuffer()
 	{
 		return m_IndexBuffer;
+	}
+	unsigned int Cube::GetIndexBufferCount()
+	{
+		return m_IndexBufferCount;
 	}
 	Cube::Cube()
 	{
@@ -57,8 +65,9 @@ namespace geometry {
 			2, 6, 7,
 
 			4, 5, 0,
-			5, 2, 0
+			5, 1, 0
 		};
+		m_IndexBufferCount = 6 * 6;
 	}
 
 	void Cube::init(float length, layout lay)
@@ -68,7 +77,7 @@ namespace geometry {
 
 	void Cube::init(float x_length, float y_length, float z_length, layout lay) {
 		if (lay == BASIC) init_Basic(x_length, y_length, z_length);
-
+		else if (lay == TEXTURE) init_Texture(x_length, y_length, z_length);
 		else init_Basic(x_length, y_length, z_length);
 	}
 
@@ -81,24 +90,35 @@ namespace geometry {
 		*/
 		m_VertexBuffer = {
 			-x_length, -y_length,  z_length,//0
-			 x_length, -y_length,  z_length,//2
-			 x_length,  y_length,  z_length,//3
-			-x_length,  y_length,  z_length,//4
-			
+			 x_length, -y_length,  z_length,//1
+			 x_length,  y_length,  z_length,//2
+			-x_length,  y_length,  z_length,//3
 
-			-x_length, -y_length, -z_length,//5
-			 x_length, -y_length, -z_length,//6
-			 x_length,  y_length, -z_length,//7
-			-x_length,  y_length, -z_length //8
+
+			-x_length, -y_length, -z_length,//4
+			 x_length, -y_length, -z_length,//5
+			 x_length,  y_length, -z_length,//6
+			-x_length,  y_length, -z_length //7
 		};
+		m_VertexBufferSize = 8 * 3 * sizeof(float);
 		setIndexBuffer();
 	}
 
 	void Cube::init_Texture(float x_length, float y_length, float z_length)
 	{
 		m_VertexBuffer = {
+			-x_length, -y_length,  z_length, 0.0f, 0.0f,//0
+			 x_length, -y_length,  z_length, 1.0f, 0.0f,//1
+			 x_length,  y_length,  z_length, 1.0f, 1.0f,//2
+			-x_length,  y_length,  z_length, 0.0f, 1.0f,//3
+			
 
+			-x_length, -y_length, -z_length, 1.0f, 0.0f,//4
+			 x_length, -y_length, -z_length, 0.0f, 0.0f,//5
+			 x_length,  y_length, -z_length, 0.0f, 1.0f,//6
+			-x_length,  y_length, -z_length, 1.0f, 1.0f //7
 		};
+		m_VertexBufferSize = 8 * 5 * sizeof(float);
 		setIndexBuffer();
 	}
 

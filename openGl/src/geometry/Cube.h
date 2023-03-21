@@ -6,8 +6,10 @@ namespace geometry {
 
 	class Cube :public Geometry {
 	public:
-		virtual std::vector<float>& GetVertexBuffer() override;
-		virtual std::vector<unsigned int>& GetIndexBuffer() override;
+		std::vector<float>& GetVertexBuffer() override;
+		unsigned int GetVertexBufferSize() override;
+		std::vector<unsigned int>& GetIndexBuffer() override;
+		unsigned int GetIndexBufferCount() override;
 
 		Cube();
 		Cube(float length);
@@ -16,7 +18,9 @@ namespace geometry {
 		Cube(float x_length, float y_length, float z_length, layout lay);
 	private:
 		std::vector<float>m_VertexBuffer;
+		unsigned int m_VertexBufferSize;
 		std::vector<unsigned int>m_IndexBuffer;
+		unsigned int m_IndexBufferCount;
 
 		void setIndexBuffer();
 		void init(float length, layout lay);
