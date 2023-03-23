@@ -3,7 +3,8 @@
 namespace test {
 	CubeTest::CubeTest() : x_Rotate(0.0f), y_Rotate(0.0f), z_Rotate(0.0f)
 	{
-        geometry::Cube cube(1.0f, geometry::TEXTURE);
+        //geometry::Cube cube(1.0f, geometry::TEXTURE);
+        geometry::Pyramid cube;
 
         m_VertexArray = std::make_unique<VertexArray>();
         m_VertexBuffer = std::make_unique<VertexBuffer>(cube.GetVertexBuffer(), cube.GetVertexBufferSize());
@@ -19,7 +20,7 @@ namespace test {
 
         VertexBufferLayout layout;
         layout.Push<float>(3);//vertex pos
-        layout.Push<float>(2);//texture pos
+        //layout.Push<float>(2);//texture pos
         m_VertexArray->AddBuffer(*m_VertexBuffer, layout);
 
         m_Texture->Bind(0);

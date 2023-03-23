@@ -1,6 +1,7 @@
 #pragma once
 
 #include "geometry/Cube.h"
+#include "geometry/Pyramid.h"
 #include "Test.h"
 
 namespace test {

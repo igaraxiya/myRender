@@ -15,3 +15,12 @@ void Renderer::Draw(const VertexArray& vao, const IndexBuffer& ibo, const Shader
     
     GLCall(glDrawElements(GL_TRIANGLES, ibo.GetCount(), GL_UNSIGNED_INT, nullptr));
 }
+
+void Renderer::Draw(const VertexArray& vao, const VertexBuffer& vbo, const Shader& shader) const
+{
+    vao.Bind();
+    vbo.Bind();
+    shader.Bind();
+
+    GLCall(glDrawArrays(GL_TRIANGLES, 0, vbo.GetCount()));
+}
