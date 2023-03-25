@@ -2,6 +2,7 @@
 
 #include "geometry/Cube.h"
 #include "geometry/Pyramid.h"
+#include "geometry/Sphere.h"
 #include "Test.h"
 
 namespace test {

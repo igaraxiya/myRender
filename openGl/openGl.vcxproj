@@ -137,6 +137,7 @@
     <ClCompile Include="src\Debug.cpp" />
     <ClCompile Include="src\geometry\Cube.cpp" />
     <ClCompile Include="src\geometry\Pyramid.cpp" />
+    <ClCompile Include="src\geometry\Sphere.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />

@@ -26,5 +26,6 @@ namespace geometry {
 		void setIndexBuffer();
 		void init(float length, float width, float height, layout lay);
 		void init_Basic(float length, float width, float height);
+		void init_Texture(float length, float width, float height);
 	};
 }

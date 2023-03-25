@@ -4,6 +4,7 @@ namespace geometry {
 	void Pyramid::init(float length, float width, float height, layout lay)
 	{
 		if (lay == BASIC) init_Basic(length, width, height);
+		else if (lay == TEXTURE) init_Texture(length, width, height);
 		else init_Basic(length, width, height);
 	}
 
@@ -33,6 +34,18 @@ namespace geometry {
 			-length,      0, -width,//
 		};
 		m_VertexBufferSize = 5 * 3 * sizeof(float);
+		setIndexBuffer();
+	}
+	void Pyramid::init_Texture(float length, float width, float height)
+	{
+		m_VertexBuffer = {
+			   0.0f, height,   0.0f, 0.5f, 1.0f,//¶¥
+			-length,      0,  width, 0.0f, 0.0f,//
+			 length,      0,  width, 1.0f, 0.0f,//
+			 length,      0, -width, 0.0f, 0.0f,//
+			-length,      0, -width, 1.0f, 0.0f//
+		};
+		m_VertexBufferSize = 5 * 5 * sizeof(float);
 		setIndexBuffer();
 	}
 	Pyramid::Pyramid()
