@@ -1,11 +1,14 @@
 #include "CubeTest.h"
 
+#include "geometry/Torus.h"
+
 namespace test {
 	CubeTest::CubeTest() : x_Rotate(0.0f), y_Rotate(0.0f), z_Rotate(0.0f)
 	{
         //geometry::Cube cube(1.0f, geometry::TEXTURE);
         //geometry::Pyramid cube(0.5f, 0.5f, 1.0f, geometry::TEXTURE);
-        geometry::Shpere cube(1.0f, 48, geometry::TEXTURE);
+        //geometry::Shpere cube(1.0f, 48, geometry::TEXTURE);
+        geometry::Torus cube(1.0f, 2.0f, geometry::TEXTURE);
 
         m_VertexArray = std::make_unique<VertexArray>();
         m_VertexBuffer = std::make_unique<VertexBuffer>(cube.GetVertexBuffer(), cube.GetVertexBufferSize());

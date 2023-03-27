@@ -78,6 +78,9 @@
     <ClCompile Include="src\geometry\Sphere.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\geometry\Torus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
@@ -1408,6 +1411,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\test\CubeTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\Torus.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

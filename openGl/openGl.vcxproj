@@ -138,6 +138,7 @@
     <ClCompile Include="src\geometry\Cube.cpp" />
     <ClCompile Include="src\geometry\Pyramid.cpp" />
     <ClCompile Include="src\geometry\Sphere.cpp" />
+    <ClCompile Include="src\geometry\Torus.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="src\geometry\Geometry.h" />
     <ClInclude Include="src\geometry\Pyramid.h" />
     <ClInclude Include="src\geometry\Sphere.h" />
+    <ClInclude Include="src\geometry\Torus.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
