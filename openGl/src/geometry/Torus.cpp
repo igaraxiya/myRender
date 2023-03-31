@@ -106,7 +106,7 @@ namespace geometry {
 		float amt = toRadians(i * 360 / m_Prec);
 
 		glm::mat4 rMat = glm::rotate(glm::mat4(1.0f), amt, glm::vec3(0.0f, 0.0f, 1.0f));
-		glm::vec3 pos(rMat * glm::vec4(m_OuterRadius, 0.0f, 0.0f, 1.0f));
+		glm::vec3 pos(rMat * glm::vec4((m_OuterRadius - m_InnerRadius) / 2, 0.0f, 0.0f, 1.0f));
 		pos += glm::vec3(m_InnerRadius, 0.0f, 0.0f);
 
 		return std::make_pair(pos.x, std::make_pair(pos.y, pos.z));
@@ -114,7 +114,7 @@ namespace geometry {
 	std::pair<float, std::pair<float, float>> Torus::GetRing(int ring, int vert)
 	{
 		float amt = toRadians(ring * 360 / m_Prec);
-		glm::mat4 rMat = glm::rotate(glm::mat4(1.0f), amt, glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 rMat = glm::rotate(glm::mat4(1.0f), amt, glm::vec3(0.0f, 1.0f, 0.0f));
 		std::pair<float, std::pair<float, float>>R = GetFirstRing(vert);
 		glm::vec3 pos = rMat * glm::vec4(R.first, R.second.first, R.second.second, 1.0f);
 
